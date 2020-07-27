@@ -15,7 +15,7 @@ self-use setup script for Debian with Gnome DE
 
 `wget https://raw.githubusercontent.com/KomoreKalu/starter/master/tool/install.sh`
 
-`sudo install.sh`	
+`sudo bash install.sh`	
 
 
 
