@@ -9,13 +9,13 @@ self-use setup script for Debian with Gnome DE
 
 #### via wget
 
-`wget https://raw.githubusercontent.com/KomoreKalu/starter/master/tool/install.sh -c -O - | sudo bash -`
+`wget https://raw.githubusercontent.com/KomoreKalu/starter/master/tool/install.sh -c -O - | bash -`
 
 #### manual
 
 `wget https://raw.githubusercontent.com/KomoreKalu/starter/master/tool/install.sh`
 
-`sudo bash install.sh`	
+`./install.sh`	
 
 
 
