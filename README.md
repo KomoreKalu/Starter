@@ -1,5 +1,5 @@
 # starter
-self-use setup script for Debian with Gnome DE
+self-use customization script for Gnome DE
 
 ### require
 
