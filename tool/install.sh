@@ -26,14 +26,15 @@ setup_theme(){
 
 setup_icon(){
 	cd /tmp
-	wget -c https://raw.githubusercontent.com/KomoreKalu/starter/master/source/icon -O - | wget -i - 
-	sudo dpkg -i Tela-icon-theme*
+	wget -c https://raw.githubusercontent.com/KomoreKalu/starter/master/source/icon -O - | wget -i - -O Tela-icon-theme.zip
+	unzip Tela* && cd Tela*/
+	./install.sh 
 	gsettings set org.gnome.desktop.interface icon-theme Tela-dark
 }
 
 other(){
 	gsettings set org.gnome.desktop.wm.preferences button-layout 'appmenu:minimize,maximize,close'
-	gsettings set org.gnome.shell.calendar show-weekdate true
+	#gsettings set org.gnome.shell.calendar show-weekdate true
 }
 
 main(){
