@@ -7,7 +7,7 @@ setup_font(){
 	sudo unzip NotoSerif* -d /usr/share/fonts/NotoSerifCJKsc
 	sudo unzip JetBrains* -d /usr/share/fonts/JetBrainsMono
 	cd /usr/share/fonts/
-	sudo chmod -R 644 Noto* JetBrainsMono
+	sudo chmod -R 755 Noto* JetBrainsMono
 	cd NotoSansCJKsc && sudo mkfontdir && sudo mkfontscale && cd ..
 	cd NotoSerifCJKsc && sudo mkfontdir && sudo mkfontscale && cd ..
 	cd JetBrainsMono && sudo mkfontdir && sudo mkfontscale && cd ..
