@@ -16,7 +16,7 @@ reset_theme(){
 
 reset_icon(){
 	gsettings reset org.gnome.desktop.interface icon-theme
-	sudo apt purge tela* -y
+	rm -rf $HOME/.local/share/icons/Tela*
 }
 
 main(){
