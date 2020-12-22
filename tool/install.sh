@@ -2,7 +2,7 @@
 
 setup_font(){
 	cd /tmp
-	wget -c https://raw.githubusercontent.com/KomoreKalu/starter/master/source/font -O - | wget -c -i -
+	wget -c https://cdn.jsdelivr.net/gh/KomoreKalu/starter/source/font -O - | wget -c -i -
 	sudo unzip NotoSans* -d /usr/share/fonts/NotoSansCJKsc
 	sudo unzip NotoSerif* -d /usr/share/fonts/NotoSerifCJKsc
 	sudo unzip JetBrains* -d /usr/share/fonts/JetBrainsMono
@@ -11,7 +11,7 @@ setup_font(){
 	cd NotoSansCJKsc && sudo mkfontdir && sudo mkfontscale && cd ..
 	cd NotoSerifCJKsc && sudo mkfontdir && sudo mkfontscale && cd ..
 	cd JetBrainsMono && sudo mkfontdir && sudo mkfontscale && cd ..
-	sudo sh -c 'wget -c https://raw.githubusercontent.com/KomoreKalu/starter/master/config/font.conf -O - | cat - > /etc/fonts/conf.d/64-language-selector-prefer.conf'
+	sudo sh -c 'https://cdn.jsdelivr.net/gh/KomoreKalu/starter/config/font.conf -O - | cat - > /etc/fonts/conf.d/64-language-selector-prefer.conf'
 	fc-cache -fv
 	gsettings set org.gnome.desktop.interface font-name 'Noto Sans CJK SC 13'
 	gsettings set org.gnome.desktop.interface document-font-name 'Noto Sans CJK SC 13'
@@ -26,7 +26,7 @@ setup_theme(){
 
 setup_icon(){
 	cd /tmp
-	wget -c https://raw.githubusercontent.com/KomoreKalu/starter/master/source/icon -O - | wget -i - -O Tela-icon-theme.zip
+	wget -c https://cdn.jsdelivr.net/gh/KomoreKalu/starter/source/icon -O - | wget -i - -O Tela-icon-theme.zip
 	unzip Tela* && cd Tela*/
 	./install.sh 
 	gsettings set org.gnome.desktop.interface icon-theme Tela-dark

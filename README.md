@@ -9,13 +9,11 @@ self-use customization script for Gnome DE
 
 #### via wget
 
-`wget https://raw.githubusercontent.com/KomoreKalu/starter/master/tool/install.sh -c -O - | bash -`
+`wget https://cdn.jsdelivr.net/gh/KomoreKalu/starter/tool/install.sh -O - | bash -`
 
 #### manual
 
-`wget https://raw.githubusercontent.com/KomoreKalu/starter/master/tool/install.sh`
+`wget https://cdn.jsdelivr.net/gh/KomoreKalu/starter/tool/install.sh`
 
 `./install.sh`	
-
-
 
