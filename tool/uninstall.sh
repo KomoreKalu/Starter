@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 
 reset_font(){
 	gsettings reset org.gnome.desktop.interface font-name 
