@@ -12,7 +12,8 @@ setup_font(){
 	cd NotoSansCJKsc && sudo mkfontdir && sudo mkfontscale && cd ..
 	cd NotoSerifCJKsc && sudo mkfontdir && sudo mkfontscale && cd ..
 	cd JetBrainsMono && sudo mkfontdir && sudo mkfontscale && cd ..
-	sudo sh -c 'https://cdn.jsdelivr.net/gh/KomoreKalu/starter/config/font.conf -O - | cat - > /etc/fonts/conf.d/64-language-selector-prefer.conf'
+	sudo sh -c 'echo "$(curl https://cdn.jsdelivr.net/gh/KomoreKalu/starter/config/font.conf)" > /etc/fonts/conf.d/64-language-selector-prefer.conf'
+	sudo chmod 777 /etc/fonts/conf.d/64-language-selector-prefer.conf
 	fc-cache -fv
 	gsettings set org.gnome.desktop.interface font-name 'Noto Sans CJK SC 13'
 	gsettings set org.gnome.desktop.interface document-font-name 'Noto Sans CJK SC 13'
