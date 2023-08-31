@@ -2,19 +2,7 @@
 set -e
 
 setup_font(){
-	cd /tmp
-	wget -c https://cdn.jsdelivr.net/gh/KomoreKalu/starter/source/font -O - | wget -c -i -
-	sudo unzip NotoSans* -d /usr/share/fonts/NotoSansCJKsc
-	sudo unzip NotoSerif* -d /usr/share/fonts/NotoSerifCJKsc
-	sudo unzip JetBrains* -d /usr/share/fonts/JetBrainsMono
-	cd /usr/share/fonts/
-	sudo chmod -R 755 Noto* JetBrainsMono
-	cd NotoSansCJKsc && sudo mkfontdir && sudo mkfontscale && cd ..
-	cd NotoSerifCJKsc && sudo mkfontdir && sudo mkfontscale && cd ..
-	cd JetBrainsMono && sudo mkfontdir && sudo mkfontscale && cd ..
-	sudo sh -c 'echo "$(curl https://cdn.jsdelivr.net/gh/KomoreKalu/starter/config/font.conf)" > /etc/fonts/conf.d/64-language-selector-prefer.conf'
-	sudo chmod 777 /etc/fonts/conf.d/64-language-selector-prefer.conf
-	fc-cache -fv
+	sudo apt install fonts-noto-cjk fonts-noto-color-emoji fonts-jetbrains-mono -y
 	gsettings set org.gnome.desktop.interface font-name 'Noto Sans CJK SC 13'
 	gsettings set org.gnome.desktop.interface document-font-name 'Noto Sans CJK SC 13'
 	gsettings set org.gnome.desktop.interface monospace-font-name 'JetBrains Mono 13'
@@ -22,13 +10,13 @@ setup_font(){
 }
 
 setup_theme(){
-	sudo apt install arc-theme -y
-	gsettings set org.gnome.desktop.interface gtk-theme Arc-Darker
+	sudo apt install materia-gtk-theme -y
+	gsettings set org.gnome.desktop.interface gtk-theme Materia-compact
 }
 
 setup_icon(){
 	cd /tmp
-	wget -c https://cdn.jsdelivr.net/gh/KomoreKalu/starter/source/icon -O - | wget -i - -O Tela-icon-theme.zip
+	wget -c https://cdn.jsdelivr.net/gh/edgist/starter/source/icon -O - | wget -i - -O Tela-icon-theme.zip
 	unzip Tela* && cd Tela*/
 	./install.sh 
 	gsettings set org.gnome.desktop.interface icon-theme Tela-dark
